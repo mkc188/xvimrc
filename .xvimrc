@@ -1,0 +1,58 @@
+" -------- base configuration --------
+set timeoutlen=500
+
+" searching
+" highlight searches
+set hlsearch
+" incremental searching
+set incsearch
+" ignore case for searching
+set ignorecase
+" do case-sensitive if there's a capital letter
+set smartcase
+" add the g flag to search/replace by default
+set gdefault
+
+" -------- ui configuration --------
+set number
+
+" -------- mappings --------
+" smash escape
+inoremap jk <esc>
+
+" change cursor position in insert mode
+inoremap <C-h> <left>
+inoremap <C-l> <right>
+inoremap <C-j> <down>
+inoremap <C-k> <up>
+
+" auto center
+nnoremap n nzz
+nnoremap N Nzz
+nnoremap * *zz
+nnoremap # #zz
+nnoremap g* g*zz
+nnoremap g# g#zz
+nnoremap <C-o> <C-o>zz
+nnoremap <C-i> <C-i>zz
+
+" reselect visual block after indent
+vnoremap < <gv
+vnoremap > >gv
+
+" shortcuts for windows
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+" make Y consistent with C and D. See :help Y.
+nnoremap Y y$
+
+" map semicolon to colon
+map ; :
+nnoremap ;; ;
+
+" delete character to black hole register
+nnoremap x "_x
+vnoremap x "_x
