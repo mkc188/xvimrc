@@ -1,6 +1,10 @@
 " -------- base configuration --------
 set timeoutlen=500
 
+" sync with OS clipboard
+set clipboard=unnamed
+" disable sounds
+set noerrorbells
 " searching
 " highlight searches
 set hlsearch
@@ -15,16 +19,12 @@ set gdefault
 
 " -------- ui configuration --------
 set number
+set nowrap
+set laststatus=0
 
 " -------- mappings --------
 " smash escape
 inoremap jk <esc>
-
-" change cursor position in insert mode
-inoremap <C-h> <left>
-inoremap <C-l> <right>
-inoremap <C-j> <down>
-inoremap <C-k> <up>
 
 " auto center
 nnoremap n nzz
@@ -49,10 +49,31 @@ nnoremap <C-l> <C-w>l
 " make Y consistent with C and D. See :help Y.
 nnoremap Y y$
 
-" map semicolon to colon
-map ; :
-nnoremap ;; ;
-
 " delete character to black hole register
 nnoremap x "_x
 vnoremap x "_x
+
+" vim-commentary
+map gc :xccmd commentAndUncommentCurrentLines<CR>
+
+" ReplaceWithRegister
+vnoremap gr "_dP
+
+" vim-rsi
+inoremap <C-a> <C-o>^
+inoremap <C-b> <Left>
+inoremap <C-d> <C-o>x
+inoremap <C-e> <C-o>$
+inoremap <C-f> <Right>
+
+" vim-unimpaired
+nnoremap [oh :set hlsearch<CR>
+nnoremap ]oh :set nohlsearch<CR>
+nnoremap [oi :set ignorecase<CR>
+nnoremap ]oi :set noignorecase<CR>
+nnoremap [on :set number<CR>
+nnoremap ]on :set nonumber<CR>
+nnoremap [or :set relativenumber<CR>
+nnoremap ]or :set norelativenumber<CR>
+nnoremap [ow :set wrap<CR>
+nnoremap ]ow :set nowrap<CR>
