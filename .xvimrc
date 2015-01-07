@@ -3,8 +3,6 @@ set timeoutlen=500
 
 " sync with OS clipboard
 set clipboard=unnamed
-" disable sounds
-set noerrorbells
 " searching
 " highlight searches
 set hlsearch
@@ -51,6 +49,9 @@ nnoremap <C-l> <C-w>l
 
 " make Y consistent with C and D. See :help Y.
 nnoremap Y y$
+
+" map space to colon
+noremap <space> :
 
 " delete character to black hole register
 nnoremap x "_x
