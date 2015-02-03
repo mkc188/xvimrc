@@ -3,7 +3,6 @@ set timeoutlen=500
 
 " sync with OS clipboard
 set clipboard=unnamed
-" searching
 " highlight searches
 set hlsearch
 " incremental searching
@@ -57,6 +56,9 @@ noremap <space> :
 nnoremap x "_x
 vnoremap x "_x
 
+" clear the highlighting of :set hlsearch.
+nnoremap <BS> :nohlsearch<CR><BS>
+
 " vim-commentary
 map gc :xccmd commentAndUncommentCurrentLines<CR>
 
@@ -69,18 +71,6 @@ inoremap <C-b> <Left>
 inoremap <C-d> <C-o>x
 inoremap <C-e> <C-o>$
 inoremap <C-f> <Right>
-
-" vim-unimpaired
-nnoremap [oh :set hlsearch<CR>
-nnoremap ]oh :set nohlsearch<CR>
-nnoremap [oi :set ignorecase<CR>
-nnoremap ]oi :set noignorecase<CR>
-nnoremap [on :set number<CR>
-nnoremap ]on :set nonumber<CR>
-nnoremap [or :set relativenumber<CR>
-nnoremap ]or :set norelativenumber<CR>
-nnoremap [ow :set wrap<CR>
-nnoremap ]ow :set nowrap<CR>
 
 " ListToggle
 nnoremap ,n :xccmd toggleNavigatorsVisibility<CR>
