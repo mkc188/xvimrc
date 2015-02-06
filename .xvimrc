@@ -59,6 +59,10 @@ vnoremap x "_x
 " clear the highlighting of :set hlsearch.
 nnoremap <BS> :nohlsearch<CR><BS>
 
+" easier to type, and I never use the default behavior.
+noremap H ^
+noremap L $
+
 " vim-commentary
 map gc :xccmd commentAndUncommentCurrentLines<CR>
 
