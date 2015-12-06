@@ -1,17 +1,8 @@
 " -------- base configuration --------
-set timeoutlen=500
-
-" sync with OS clipboard
-set clipboard=unnamed
-" highlight searches
 set hlsearch
-" incremental searching
 set incsearch
-" ignore case for searching
 set ignorecase
-" do case-sensitive if there's a capital letter
 set smartcase
-" add the g flag to search/replace by default
 set gdefault
 
 " -------- ui configuration --------
@@ -21,62 +12,31 @@ set laststatus=0
 set blinkcursor
 
 " -------- mappings --------
-" smash escape
-inoremap jk <esc>
-
-" auto center
-nnoremap n nzz
-nnoremap N Nzz
-nnoremap * *zz
-nnoremap # #zz
-nnoremap g* g*zz
-nnoremap g# g#zz
-nnoremap <C-o> <C-o>zz
-nnoremap <C-i> <C-i>zz
-
-" reselect visual block after indent
-vnoremap < <gv
-vnoremap > >gv
-
-" shortcuts for windows
-nnoremap ,v <C-w>v<C-w>l
-nnoremap ,s <C-w>s
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+nnoremap <BS> :nohlsearch<CR><BS>
+noremap <Space> :
 
-" make Y consistent with C and D. See :help Y.
-nnoremap Y y$
-
-" map space to colon
-noremap <space> :
-
-" delete character to black hole register
+vnoremap s "_d"0P
 nnoremap x "_x
 vnoremap x "_x
 
-" clear the highlighting of :set hlsearch.
-nnoremap <BS> :nohlsearch<CR><BS>
-
-" easier to type, and I never use the default behavior.
+nnoremap Y y$
 noremap H ^
 noremap L $
+nnoremap Q @q
 
 " vim-commentary
-map gc :xccmd commentAndUncommentCurrentLines<CR>
-
-" ReplaceWithRegister
-vnoremap gr "_dP
-
+noremap gc :xccmd commentAndUncommentCurrentLines<CR>
 " vim-rsi
 inoremap <C-a> <C-o>^
 inoremap <C-b> <Left>
 inoremap <C-d> <C-o>x
 inoremap <C-e> <C-o>$
 inoremap <C-f> <Right>
-
 " ListToggle
-nnoremap ,n :xccmd toggleNavigatorsVisibility<CR>
-nnoremap ,d :xccmd toggleDebuggerVisibility<CR>
-nnoremap ,u :xccmd toggleUtilitiesVisibility<CR>
+nnoremap \n :xccmd toggleNavigatorsVisibility<CR>
+nnoremap \d :xccmd toggleDebuggerVisibility<CR>
+nnoremap \u :xccmd toggleUtilitiesVisibility<CR>
